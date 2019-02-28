@@ -1,12 +1,15 @@
 class Api::SamplePagesController < ApplicationController
 
   def hello_method
-    render json: {message: "Hello!"}
+    time = Time.now.strftime("%m-%e-%y %H:%M")
+    render 'hello_view.json.jbuilder'
   end
   def movement_method
-    render json: {message: "You can get anything you want at Alice's Restaurant."}
+    time = Time.now.strftime("%m-%e-%y %H:%M")  
+    render 'arlo_view.json.jbuilder'
   end
   def city_method
-    render html: "Stockbridge, Massachusetts"
+    render 'town_view.json.jbuilder'
+    time = Time.now.strftime("%m-%e-%y %H:%M")
   end
 end
